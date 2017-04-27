@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bab 3</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../Style/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../Style/jqm-demos.css">
+    <script src="../Misc/jquery.js"></script>
+    <script src="../Misc/index.js"></script>
+    <script src="../Misc/jquery.mobile-1.4.5.min.js"></script>
+	
+
+	<script>
+		$( document ).on( "pagecreate", "#page1", function() {
+
+			$( document ).on( "swipeleft swiperight", "#page1", function( e ) {
+				// We check if there is no open panel on the page because otherwise
+				// a swipe to close the left panel would also open the right panel (and v.v.).
+				// We do this by checking the data that the framework stores on the page element (panel: open).
+				if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+					if ( e.type === "swipeleft" ) {
+						$( "#right-panel" ).panel( "open" );
+					} else if ( e.type === "swiperight" ) {
+						$( "#left-panel" ).panel( "open" );
+					}
+				}
+			});
+		});
+    </script>
+    <style id="combined-heading-and-section">
+    .custom-corners .ui-bar {
+      -webkit-border-top-left-radius: inherit;
+      border-top-left-radius: inherit;
+      -webkit-border-top-right-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+    .custom-corners .ui-body {
+      border-top-width: 0;
+      -webkit-border-bottom-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+      -webkit-border-bottom-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  	</style>
+	<style>
+		/* Swipe works with mouse as well but often causes text selection. */
+		/* We'll deny text selecton on everything but INPUTs and TEXTAREAs. */
+		#demo-page :not(INPUT):not(TEXTAREA) {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		/* Content styling. */
+		dl { font-family: "Segoe UI", padding: 1em; }
+		dt { font-size: 2em; font-weight: bold; }
+		dt span { font-size: .5em; color: #777; margin-left: .5em; }
+		dd { font-size: 1.25em;	margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+		.back-btn { float: right; margin: 0 2em 1em 0; }
+	</style>
+</head>
+<body>
+<div data-role="page" id="page1" data-theme="a" class="jqm-demos" data-quicklinks="true">
+    <div data-role="header" data-theme="a">
+    <h1 >MODUL 3</h1>
+		<a href="#left-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Open left panel</a>
+		<a href="Index.html" data-icon="home" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-transition="slide"></a>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content jqm-content jqm-fullwidth"> 
+       <h3><p align="center">KOMPONEN MODEL PERANGKAT LUNAK</p></h3>
+        <div class="ui-body">
+        <p><strong>KOMPETENSI DASAR</strong></p>
+        <ul data-role="listview" style=" list-style-type: " >
+          <li>3.3  Memahami komponen model perangkat lunak  </li>
+          <li>4.3  Menyajikan komponen model perangkat lunak.</li>
+        </ul>
+        <br/><p><strong>TUJUAN</strong></p>
+        <ol data-role="listview" style=" list-style-type: " >
+          <li>Peserta didik mampu menjelaskan konsep ragam model proses permodelan pengembangan perangkat lunak  berdasarkan referensi</li>
+          <li>Peserta didik mampu menjelaskan kelebihan dan kelemahan masing-masing model perangkat lunak</li>
+          <li>Peserta didik mampu membangun hakikat konsep permodelan perangkat lunak berdasarkan referensi</li>
+          <li>Peserta didik mampu menyajika  penerapan permodelan perangkat lunak </li>
+        </ol>
+        </div>
+
+      	<h2>Sub Materi 2</h2>
+				<div class="ui-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan blandit fermentum. Pellentesque cursus mauris purus, auctor commodo mi ullamcorper nec. Donec semper mattis eros, nec condimentum ante sollicitudin quis. Etiam orci sem, porttitor ut tellus nec, blandit posuere urna. Proin a arcu non lacus pretium faucibus. Aliquam sed est porttitor, ullamcorper urna nec, vehicula lorem. Cras porttitor est lorem, non venenatis diam convallis congue.</p>
+				</div>
+
+      	<h2>Contoh Daftar</h2>
+				<div class="ui-body">
+				<p>Contoh daftar daftar tertentu : </p><br>
+				<ol data-role="listview">
+					<li>Acura</li>
+					<li>Audi</li>
+					<li>BMW</li>
+					<li>Cadillac</li>
+					<li>Ferrari</li>
+				</ol>
+				</div>
+        <br>
+
+        <a href="bab1_materi2.html" class="ui-btn ui-icon-back ui-btn-icon-right ui-responsive ui-btn-inline" data-transition="slide">Back</a>
+    </div><!-- /content -->
+
+    <div data-role="panel" id="left-panel" data-theme="b">
+    <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="Index.html" data-transition="slide">Home</a></li>
+                <li><a href="daftar_isi.html" data-transition="slide">Daftar Isi</a></li>
+                <li><a href="#panel-fixed-page2" data-transition="slide">About</a></li>
+    </ul>
+    </div><!-- /panel -->
+</div><!-- /page -->	
+
+</body>
+</html>

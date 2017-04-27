@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bab 1</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../Style/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../Style/jqm-demos.css">
+    <script src="../Misc/jquery.js"></script>
+    <script src="../Misc/index.js"></script>
+    <script src="../Misc/jquery.mobile-1.4.5.min.js"></script>
+	
+
+	<script>
+		$( document ).on( "pagecreate", "#page1", function() {
+
+			$( document ).on( "swipeleft swiperight", "#page1", function( e ) {
+				// We check if there is no open panel on the page because otherwise
+				// a swipe to close the left panel would also open the right panel (and v.v.).
+				// We do this by checking the data that the framework stores on the page element (panel: open).
+				if ( $( ".ui-page-active" ).jqmData( "panel" ) !== "open" ) {
+					if ( e.type === "swipeleft" ) {
+						$( "#right-panel" ).panel( "open" );
+					} else if ( e.type === "swiperight" ) {
+						$( "#left-panel" ).panel( "open" );
+					}
+				}
+			});
+		});
+    </script>
+    <style id="combined-heading-and-section">
+    .custom-corners .ui-bar {
+      -webkit-border-top-left-radius: inherit;
+      border-top-left-radius: inherit;
+      -webkit-border-top-right-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+    .custom-corners .ui-body {
+      border-top-width: 0;
+      -webkit-border-bottom-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+      -webkit-border-bottom-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  	</style>
+	<style>
+		/* Swipe works with mouse as well but often causes text selection. */
+		/* We'll deny text selecton on everything but INPUTs and TEXTAREAs. */
+		#demo-page :not(INPUT):not(TEXTAREA) {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		/* Content styling. */
+		dl { font-family: "Segoe UI", padding: 1em; }
+		dt { font-size: 2em; font-weight: bold; }
+		dt span { font-size: .5em; color: #777; margin-left: .5em; }
+		dd { font-size: 1.25em;	margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+		.back-btn { float: right; margin: 0 2em 1em 0; }
+	</style>
+</head>
+<body>
+<div data-role="page" id="page1" data-theme="a" class="jqm-demos" data-quicklinks="true">
+    <div data-role="header" data-theme="a" data-position="fixed">
+    <h1>MODUL 1</h1>
+		<a href="#left-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Open left panel</a>
+		<a href="Index.html" data-icon="home" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-transition="slide"></a>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content jqm-content jqm-fullwidth"> 
+      	<h3><p align="center">KONSEP PEMODELAN DAN METODE DAN KEBUTUHAN PEMODELAN PERANGKAT LUNAK.</p></h3>
+      	<h2>KOMPETENSI DASAR</h2>
+        <div class="ui-body">
+        	<p>Kompetensi Pengetahuan</p>
+				<ol>
+					<li>Memahami konsep pemodelan perangkat lunak.</li>
+					<li>Memahami metode dan kebutuhan pemodelan perangkat lunak.</li>
+				</ol>
+				<p>Kompetensi Keterampilan</p>
+				<ol>
+					<li>Menyajikan beberapa karakteristik pemodelan perangkat lunak.</li>
+					<li>Menalar metode dan rancangan kebutuhan pemodelan perangkat lunak</li>
+				</ol>
+		</div>
+		<h2>TUJUAN</h2>
+		<div class="ui-body">
+				<ol>
+					<li>Peserta didik mampu menjelaskan hakikat/konsep permodelan perangkat lunak</li>
+					<li>Peserta didik mampu menjelaskan proses di dalam perangkat lunak</li>
+					<li>Peserta didik mampu menjelaskan karakteristik perangkat lunak</li>
+				</ol>
+        </div>
+
+      	
+      	<h2>A. Konsep rekayasa PL</h2>
+			<div class="ui-body">
+				<img src="../Image/gambar3.png" alt="gambar3" style="width:100%; max-width:2048px; margin:0 auto; display block;">
+
+				<p align="justify"><b>Perangkat lunak</b> merupakan sebagai media penerjemah perintah yang diberikan oleh pengguna kepada komputer untuk selanjutnya diproses melalui perangkat keras komputer tersebut. Ada tiga jenis perangkat lunak yaitu sistem operasi, perangkat lunak bahasa pemrograman seperti java, dan perangkat lunak aplikasi.</p>
+			</div>
+		<h2>B. Komponen dan karakteristik PL</h2>
+		<h3>1. Komponen Perangkat Lunak</h3>
+			<div class="ui-body">
+				<ol type="a">
+ 					<li>Sistem Operasi</li>
+ 					<p align="justify">Sistem Operasi (disebut juga platform software) terdiri dari program utama dan program low-level yang mengatur operasi dasar komputer. </p>
+  					<li>Device Driver </li>
+  					<p align="justify">Device Driver adalah program komputer yang mengawal jenis-jenis peranti yang dipasangkan (install) pada komputer. </p>
+  					<li>Program Utilitas</li>
+  					<p align="justify">Adalah sebuah program yang digunakan untuk meningkatkan kapabilitas program komputer yang telah ada pada computer. </p>
+				</ol>
+			<h3>2. Karakteristik Perangkat Lunak</h3>
+			<img src="../Image/gambar1.png" alt="gambar1" style="width:100%; max-width:2048px; margin:0 auto; display block;">
+			<div class="ui-body">
+				<ol type="a">
+ 					<li>Understandability</li>
+ 					<p align="justify">membuat proses secara eksplisit didefinisikan dan bagaimana sehingga mudah untuk mengerti definisi proses</p>
+  					<li>Visibility</li>
+  					<p align="justify">Aktifitas proses menghasilkan hasil yang jelas sehingga tahapan proses yang dilakukan terlihat </p>
+  					<li>Supportability</li>
+  					<p align="justify">Aktifitas Proses dapat didukung atas CASE tools </p>
+  					<li>Acceptability</li>
+  					<p align="justify">Penerimaan atas proses yang terdefinisi dan yang digunakan oleh Engineer selama pembangunan Produk Perangkat Lunak.</p>
+  					<li>Reliability</li>
+  					<p align="justify">Proses didesain dalam suatu metode untuk dihindarkan dari kesalahan.</p>
+  					<li>Robustness</li>
+  					<p align="justify">Proses dapat meneruskan dalam masalah yang tidak diharpkan terjadi.</p>
+  					<li>Maintainability</li>
+  					<p align="justify">Proses yang merefleksi atas perubahan terhadap permintaan atau perbaikan proses yang diidentifikasi.</p>
+  					<li>Rapidity</li>
+  					<p align="justify">bagaimana cepat dapat berjalan atas proses pengiriman atau implementasi sebuah sistem dari Spesifikasi yang ada sampai selesai.</p>
+				</ol>
+			</div>
+				</div>
+
+      	
+        <br>
+		
+    <div class="ui-grid-a ui-responsive">
+        <div class="ui-block-a"><a href="bab1_materi2.html" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-responsive" data-transition="slide">Next</a></div>
+        </div>   
+    </div><!-- /content -->
+
+    <div data-role="panel" id="left-panel" data-theme="b">
+    <ul data-role="listview">
+            	<img src="../Image/slidepanel.png" alt="gambar3" style="width:100%; max-width:2048px; margin:0 auto; display block;">
+                <li><a href="Index.html" data-transition="slide">Home</a></li>
+                <li><a href="daftar_isi.html" data-transition="slide">Daftar Isi</a></li>
+                <li><a href="#panel-fixed-page2" data-transition="slide">About</a></li>
+    </ul>
+
+    </div><!-- /panel -->
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+		<p>Media Ajar Pemodelan Perangkat Lunak - Kelompok 6 </p>
+		<p>Copyright 2017 | Universitas Negeri Malang</p>
+		</div><!-- /footer -->
+</div><!-- /page -->	
+
+</body>
+</html>
